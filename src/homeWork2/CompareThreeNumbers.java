@@ -21,11 +21,13 @@ public class CompareThreeNumbers {
         if (firstNumber > secondNumber && firstNumber > thirdNumber) {
             System.out.println("Pirmais cipars " + firstNumber + " ir lielāks par " + secondNumber + " un " + thirdNumber);
         } else if (firstNumber > secondNumber && firstNumber < thirdNumber) {
-            System.out.println("Threšai cipars " + thirdNumber + " ir lielāks par " + firstNumber + " un " + secondNumber);
+            System.out.println("Trešai cipars " + thirdNumber + " ir lielāks par " + firstNumber + " un " + secondNumber);
         } else if ((firstNumber < secondNumber && secondNumber > thirdNumber)) {
             System.out.println("Otrais cipars " + secondNumber + " ir lielāks par " + firstNumber + " un " + thirdNumber);
         }else if ((firstNumber < secondNumber && secondNumber < thirdNumber)) {
             System.out.println("Threšai cipars " + thirdNumber + " ir lielāks par " + firstNumber + " un " + secondNumber);
+        }else{
+            System.out.println("Visi ir vienādi");
         }
     }
 }
