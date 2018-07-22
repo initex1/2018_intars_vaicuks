@@ -1,5 +1,5 @@
 package homeWork3;
-//s
+
 
 public class PrintNumbers {
     public static void main(String[] args) {
