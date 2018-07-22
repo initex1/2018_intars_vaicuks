@@ -5,16 +5,12 @@ import java.util.Scanner;
 
 public class computerGuessNumber {
     public static void main(String[] args) {
-
         System.out.println("Sveix! Iedomājies ciparu no 0 līdz 100");
         System.out.println("Es tagad arī izdomāšu ciparu un Tu pateiksi vai tas ir vienāds ar Tavējo ");
 
         /* Izvēlies izmantojamo minēšanas metrodi!!!*/
-
-
         //randomGuess();
         binaryGuess();
-
     }
 
     private static void binaryGuess() {
@@ -36,17 +32,19 @@ public class computerGuessNumber {
                 rangeFrom = myGuess+1;
                 System.out.println("range from " + rangeFrom + " līdz " + rangeTo);
                 System.out.println("Mēģināšu vēlreiz");
-                myGuess = random.nextInt(rangeTo - rangeFrom + 1) + rangeFrom;
-                System.out.println("Es izvēlējos ciparu " + myGuess);
+                //myGuess = random.nextInt(rangeTo - rangeFrom + 1) + rangeFrom;
+                myGuess=((rangeTo-rangeFrom)/2)+rangeFrom;
+                System.out.println("Es sss  izvēlējos ciparu " + myGuess);
             }
             if (answer.equals("b")) {
                 rangeTo = myGuess-1;
                 System.out.println("range from " + rangeFrom + " līdz " + rangeTo);
                 System.out.println("Mēģināšu vēlreiz");
-                myGuess = random.nextInt(rangeTo - rangeFrom + 1) + rangeFrom;
-                System.out.println("Es izvēlējos ciparu " + myGuess);
+                //myGuess = random.nextInt(rangeTo - rangeFrom + 1) + rangeFrom;
+                myGuess=((rangeTo-rangeFrom)/2)+rangeFrom;
+                System.out.println("Es bbbizvēlējos ciparu " + myGuess);
             }
-            System.out.println("Vai tas ir vienāds/lielāks/mazāks attiecībā pret Tavu?");
+            System.out.print("Vai tas ir vienāds/lielāks/mazāks attiecībā pret Tavu?");
             answer = scanner.next();
         }
         System.out.println("Es ir faķīrs!!!");
