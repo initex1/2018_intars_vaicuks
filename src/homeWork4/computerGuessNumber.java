@@ -8,12 +8,16 @@ public class computerGuessNumber {
 
         System.out.println("Sveix! Iedomājies ciparu no 0 līdz 100");
         System.out.println("Es tagad arī izdomāšu ciparu un Tu pateiksi vai tas ir vienāds ar Tavējo ");
+
+        /* Izvēlies izmantojamo minēšanas metrodi!!!*/
+
+
         //randomGuess();
-        binarySearch();
+        binaryGuess();
 
     }
 
-    private static void binarySearch() {
+    private static void binaryGuess() {
         Random random = new Random();
         Scanner scanner = new Scanner(System.in);
         System.out.println("Ja mans cipars ir lielāks, tad ieraksti" + " \"b\"");
