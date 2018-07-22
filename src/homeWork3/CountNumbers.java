@@ -21,14 +21,14 @@ public class CountNumbers {
             for (int a = numberA; a <= numberB; a++) {
                 result = result + a;
             }
-            System.out.println("Visu skaitļu summa ar pirmo metori: " + result);
+            System.out.println("Visu skaitļu summa ar pirmo metodi: " + result);
         }
     }
 
     private static void resultMethodB(int numberA, int numberB) {
         if (numberA < numberB) {
             int resultB = (numberB - numberA + 1) * (numberA + numberB) / 2;
-            System.out.println("Visu skaitļu summa ar otro metori: " + resultB);
+            System.out.println("Visu skaitļu summa ar otro metodi: " + resultB);
         }
     }
 }
