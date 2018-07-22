@@ -29,14 +29,14 @@ public class computerGuessNumber {
         String answer = scanner.next();
         while (!answer.equals("ok")) {
             if (answer.equals("s")) {
-                rangeFrom = myGuess;
+                rangeFrom = myGuess+1;
                 System.out.println("range from " + rangeFrom + " līdz " + rangeTo);
                 System.out.println("Mēģināšu vēlreiz");
                 myGuess = random.nextInt(rangeTo - rangeFrom + 1) + rangeFrom;
                 System.out.println("Es izvēlējos ciparu " + myGuess);
             }
             if (answer.equals("b")) {
-                rangeTo = myGuess;
+                rangeTo = myGuess-1;
                 System.out.println("range from " + rangeFrom + " līdz " + rangeTo);
                 System.out.println("Mēģināšu vēlreiz");
                 myGuess = random.nextInt(rangeTo - rangeFrom + 1) + rangeFrom;
