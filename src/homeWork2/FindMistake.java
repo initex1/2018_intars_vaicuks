@@ -9,7 +9,7 @@ public class FindMistake {
 
         Scanner scanner = new Scanner(System.in);
 
-        System.out.print("Enter first number: ");   // Misspelled "number"
+        System.out.print("Enter first nu4mber: ");   // Misspelled "number"
 
         int firstNumber = scanner.nextInt();
 
