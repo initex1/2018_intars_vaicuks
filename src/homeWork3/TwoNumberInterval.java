@@ -1,6 +1,7 @@
 package homeWork3;
 
 import java.util.Scanner;
+//s
 
 public class TwoNumberInterval {
     public static void main(String[] args) {

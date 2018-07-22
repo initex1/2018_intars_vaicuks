@@ -1,6 +1,7 @@
 package homeWork3;
 
 import java.util.Scanner;
+//s
 
 public class TwoEvenNumbers {
     public static void main(String[] args) {
