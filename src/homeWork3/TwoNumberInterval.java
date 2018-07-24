@@ -10,6 +10,10 @@ public class TwoNumberInterval {
         int numberA = scanner.nextInt();
         System.out.print("Ievadi otro ciparu: ");
         int numberB = scanner.nextInt();
+        printIntervalNumbers(numberA, numberB);
+    }
+
+    private static void printIntervalNumbers(int numberA, int numberB) {
         if (numberA < numberB) {
             System.out.println("Pirmais cipars ir mazāks par otro, tāpēc: ");
             for (int a = numberA; a <= numberB; a++) {

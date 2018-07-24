@@ -10,6 +10,10 @@ public class TwoEvenNumbers {
         int numberA = scanner.nextInt();
         System.out.print("Ievadi otro ciparu: ");
         int numberB = scanner.nextInt();
+        findEvenNumbers(numberA, numberB);
+    }
+
+    private static void findEvenNumbers(int numberA, int numberB) {
         if (numberA < numberB) {
             for (int a = numberA; a <= numberB; a++) {
                 if (a % 2 == 0) {
