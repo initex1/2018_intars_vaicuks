@@ -3,7 +3,7 @@ package homeWork5;
 
 import java.util.Random;
 
-public class FindBiggesNumber {
+public class FindBiggestNumber {
     public static void main(String[] args) {
 
         int[] list = createAndFillList();
