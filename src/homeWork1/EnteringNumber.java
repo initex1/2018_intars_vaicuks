@@ -2,6 +2,7 @@ package homeWork1;
 
 import java.util.Scanner;
 
+//OK, šeit varēja arī neiznest atsevišķā metodē
 public class EnteringNumber {
 
 

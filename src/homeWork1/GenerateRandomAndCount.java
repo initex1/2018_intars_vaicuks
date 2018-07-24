@@ -2,6 +2,7 @@ package homeWork1;
 
 import java.util.Random;
 
+//OK, lieto kombināciju ctrl+left_alt+l
 public class GenerateRandomAndCount {
 
     public static void main(String[] args) {
@@ -13,7 +14,7 @@ public class GenerateRandomAndCount {
         System.out.println("pirmais cipars ir " + numberTwo);
         int numberThree = random.nextInt(100) + 0;
         System.out.println("pirmais cipars ir " + numberThree);
-        System.out.println("Šito skaitļu summa ir "+(numberOne+numberTwo+numberThree));
+        System.out.println("Šito skaitļu summa ir " + (numberOne + numberTwo + numberThree));
     }
 }
 

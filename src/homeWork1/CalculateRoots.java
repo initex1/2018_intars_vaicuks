@@ -2,6 +2,7 @@ package homeWork1;
 
 import java.util.Scanner;
 
+//OK
 public class CalculateRoots {
     public static void main(String[] args) {
         int numberA, numberB, numberC, discriminant;
