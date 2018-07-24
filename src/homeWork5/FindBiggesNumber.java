@@ -1,22 +1,20 @@
 package homeWork5;
 
-import java.util.Collections;
+
 import java.util.Random;
 
 public class FindBiggesNumber {
     public static void main(String[] args) {
 
-        int[] list = new int[10];
-        Random random = new Random();
+        int[] list = createAndFillList();
 
-        for (int i = 0; i < 10; i++) {
-            list[i] = random.nextInt(100);
-        }
+        printList(list);
 
-        for (int i = 0; i < list.length; i++) {
-            System.out.println(list[i]);
-        }
+        int biggestInt = findBiggestInteger(list);
+        System.out.println("Lielākais cipar virknē ir " + biggestInt);
+    }
 
+    private static int findBiggestInteger(int[] list) {
         int biggestInt = 0;
         for (int i = 0; i < list.length; i++) {
             if (biggestInt < list[i]) {
@@ -24,6 +22,22 @@ public class FindBiggesNumber {
                 biggestInt = list[i];
             }
         }
-        System.out.println("Lielākais cipar virknē ir " + biggestInt);
+        return biggestInt;
+    }
+
+    private static void printList(int[] list) {
+        for (int i = 0; i < list.length; i++) {
+            System.out.println(list[i]);
+        }
+    }
+
+    private static int[] createAndFillList() {
+        int[] list = new int[10];
+        Random random = new Random();
+
+        for (int i = 0; i < 10; i++) {
+            list[i] = random.nextInt(100);
+        }
+        return list;
     }
 }
