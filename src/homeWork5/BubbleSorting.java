@@ -2,7 +2,7 @@ package homeWork5;
 
 import java.util.Random;
 
-public class bubbleSorting {
+public class BubbleSorting {
     public static void main(String[] args) {
         int[] list = createAndFillList();
 
