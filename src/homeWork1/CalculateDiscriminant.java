@@ -8,6 +8,10 @@ public class CalculateDiscriminant {
 
     }
 
+    //Šī metode būtu jāsadala uz pusēm, jo pēc būtības tā dara divas lietas: prasa ievadīt datus un izrēķina diskriminantu.
+    //Jācenšas pēc iespējas sadalīt atbīldības pa metodēm vai vismaz nelikt visu vienā
+    //metodei šos skaitļus vienkāŗši janodod kā parametrus un datu ievadi var atstāt main metodē
+    //P.S Tā kā tas ir darīts CalculateRoots
     private static int calcDiscriminant() {
         Scanner scanner = new Scanner(System.in);
         System.out.println("Lūdzu, ievadi pirmo skaitli");

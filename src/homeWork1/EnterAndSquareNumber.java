@@ -2,6 +2,7 @@ package homeWork1;
 
 import java.util.Scanner;
 
+//OK, šeit tāpat nav vajadzīga atsevišķa metode
 public class EnterAndSquareNumber {
     public static void main(String[] args) {
         System.out.println("ievadītais skaitlis kvadrātā ir: " + sqareNumber());
