@@ -1,6 +1,5 @@
 package homeWork5;
 
-import java.util.Collection;
 import java.util.Random;
 
 public class SwapIndex {
