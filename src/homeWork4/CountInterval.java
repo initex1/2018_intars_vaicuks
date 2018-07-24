@@ -10,6 +10,10 @@ public class CountInterval {
         System.out.print("Ievadi otro ciparu: ");
         int numberB = scanner.nextInt();
 
+        printInterval(numberA, numberB);
+    }
+
+    private static void printInterval(int numberA, int numberB) {
         if (numberA < numberB) {
             while (numberA <= numberB) {
                 System.out.println(numberA);

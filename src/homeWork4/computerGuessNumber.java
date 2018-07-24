@@ -27,6 +27,11 @@ public class computerGuessNumber {
         System.out.println("Es izvēlējos ciparu " + myGuess);
         System.out.print("Vai tas ir vienāds/lielāks/mazāks attiecībā pret Tavu?");
         String answer = scanner.next();
+        binaryGuessLogic(scanner, myGuess, rangeFrom, rangeTo, answer);
+        System.out.println("Es ir faķīrs!!!");
+    }
+
+    private static void binaryGuessLogic(Scanner scanner, int myGuess, int rangeFrom, int rangeTo, String answer) {
         while (!answer.equals("ok")) {
             if (answer.equals("s")) {
                 rangeFrom = myGuess+1;
@@ -47,7 +52,6 @@ public class computerGuessNumber {
             System.out.print("Vai tas ir vienāds/lielāks/mazāks attiecībā pret Tavu?");
             answer = scanner.next();
         }
-        System.out.println("Es ir faķīrs!!!");
     }
 
     private static void randomGuess() {
@@ -60,6 +64,11 @@ public class computerGuessNumber {
         System.out.println("Es izvēlējos ciparu " + myGuess);
         System.out.print("Vai tas ir vienāds ar Tavu?");
         String answer = scanner.next();
+        randomGuessLogic(random, scanner, answer);
+    }
+
+    private static void randomGuessLogic(Random random, Scanner scanner, String answer) {
+        int myGuess;
         while (!answer.equals("ok")) {
             System.out.println("Mēģināšu vēlreiz");
             myGuess = random.nextInt(101);

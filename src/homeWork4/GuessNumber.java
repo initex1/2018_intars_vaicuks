@@ -12,6 +12,10 @@ public class GuessNumber {
         System.out.print("Ievadi  ciparu: ");
         int userNumber = scanner.nextInt();
         System.out.println("Mans  cipars ir "+computerNumber);   //Comment out after testing
+        userGuessing(computerNumber, scanner, userNumber);
+    }
+
+    private static void userGuessing(int computerNumber, Scanner scanner, int userNumber) {
         while (userNumber != computerNumber) {
             if (userNumber > computerNumber) {
                 System.out.println("Tavs skaitlis ir lielāks");
