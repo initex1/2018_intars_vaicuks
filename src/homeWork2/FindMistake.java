@@ -3,6 +3,9 @@ package homeWork2;
 import java.util.Scanner;
 
 public class FindMistake {
+    /*
+    Wrong logic - if there are two greatest values.
+     */
 
 
     public static void main(String[] args) {

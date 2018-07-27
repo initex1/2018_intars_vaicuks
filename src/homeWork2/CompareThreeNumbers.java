@@ -13,21 +13,22 @@ public class CompareThreeNumbers {
         int thirdNumber = scanner.nextInt();
         System.out.println("OK. Tagad salīdzināsim");
         compareNumbers(firstNumber, secondNumber, thirdNumber);
-
-
     }
 
+
     private static void compareNumbers(int firstNumber, int secondNumber, int thirdNumber) {
-        if (firstNumber > secondNumber && firstNumber > thirdNumber) {
-            System.out.println("Pirmais cipars " + firstNumber + " ir lielāks par " + secondNumber + " un " + thirdNumber);
-        } else if (firstNumber > secondNumber && firstNumber < thirdNumber) {
-            System.out.println("Trešai cipars " + thirdNumber + " ir lielāks par " + firstNumber + " un " + secondNumber);
-        } else if ((firstNumber < secondNumber && secondNumber > thirdNumber)) {
-            System.out.println("Otrais cipars " + secondNumber + " ir lielāks par " + firstNumber + " un " + thirdNumber);
-        }else if ((firstNumber < secondNumber && secondNumber < thirdNumber)) {
-            System.out.println("Threšai cipars " + thirdNumber + " ir lielāks par " + firstNumber + " un " + secondNumber);
-        }else{
+        if (firstNumber >= secondNumber && firstNumber > thirdNumber) {
+            System.out.println(" Cipars " + firstNumber + " ir lielākais");
+        } else if (firstNumber > secondNumber && firstNumber >= thirdNumber) {
+            System.out.println(" Cipars " + firstNumber + " ir lielākais");
+        } else if (secondNumber >= firstNumber && secondNumber > thirdNumber) {
+            System.out.println(" Cipars " + secondNumber + " ir lielākais");
+        } else if (thirdNumber >= secondNumber && thirdNumber > firstNumber) {
+            System.out.println(" Cipars " + thirdNumber + " ir lielākais");
+        } else if (firstNumber == secondNumber && firstNumber == thirdNumber) {
             System.out.println("Visi ir vienādi");
         }
     }
 }
+
+
