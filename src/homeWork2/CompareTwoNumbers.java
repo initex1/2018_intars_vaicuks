@@ -15,9 +15,9 @@ public class CompareTwoNumbers {
 
     private static void compareNumbers(int numberA, int numberB) {
         if (numberA > numberB) {
-            System.out.println("Šis cipars " + numberA + " ir lilāks par " + numberB);
+            System.out.println("Šis cipars " + numberA + " ir lilāks par " + numberB); //typo - lilāks
         } else if (numberA < numberB) {
-            System.out.println("Šis cipars " + numberB + " ir lilāks par " + numberA);
+            System.out.println("Šis cipars " + numberB + " ir lilāks par " + numberA); //typo - lilāks
         } else {
             System.out.println("ŠAbi ir vienādi: A==B");
         }

@@ -2,6 +2,7 @@ package homeWork2;
 
 import java.util.Scanner;
 
+//Ok
 public class FindMistake {
     /*
     Wrong logic - if there are two greatest values.

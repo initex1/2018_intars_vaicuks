@@ -2,6 +2,7 @@ package homeWork2;
 
 import java.util.Scanner;
 
+//Ok
 public class CompareThreeNumbers {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
