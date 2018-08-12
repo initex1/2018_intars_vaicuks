@@ -1,6 +1,9 @@
 package homeWork5;
 
 import java.util.Random;
+/*
+ Pirmais patstāvīgais rekursijas risinānums:)
+*/
 
 public class BinarySearch {
     public static void main(String[] args) {
@@ -37,6 +40,5 @@ public class BinarySearch {
         } else if (testInteger == findNumber) {
             System.out.println("Atradu ciparu zem indeksa: " + testIndex);
         }
-
     }
 }
