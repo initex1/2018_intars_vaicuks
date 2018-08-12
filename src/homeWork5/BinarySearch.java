@@ -16,7 +16,7 @@ public class BinarySearch {
         System.out.println("--------------------------");
         int numberToCompare = list[getRandomNumberFromList(list)];
         System.out.println("Man vajag atrast šo skaitli: " + numberToCompare);
-        doBinarySearch(list, numberToCompare, 0, list.length);
+        doBinarySearch(list, numberToCompare, 0, list.length - 1);
     }
 
     private static int getRandomNumberFromList(int[] list) {
@@ -29,16 +29,18 @@ public class BinarySearch {
     public static void doBinarySearch(int[] list, int findNumber, int lowestMargin, int highestMargin) {
         int testIndex = (highestMargin + lowestMargin) / 2;
         int testInteger = list[testIndex];
+//        System.out.println(testIndex+" "+ testInteger);
         if (testInteger > findNumber) {
             highestMargin = testIndex - 1;
-//            System.out.println("Pārbaudāmā vērtība: " + testInteger + " zem indeksa " + testIndex + ". Veicu pirmo if'u - griesti : " + highestMargin);
+//           System.out.println("Pārbaudāmā vērtība: " + testInteger + " zem indeksa " + testIndex + ". Veicu pirmo if'u - griesti : " + highestMargin);
             doBinarySearch(list, findNumber, lowestMargin, highestMargin);
         } else if (testInteger < findNumber) {
             lowestMargin = testIndex + 1;
-//            System.out.println("Pārbaudāmā vērtība: " + testInteger + " zem indeksa " + testIndex + ". Veicu otro if'u - grīda: " + lowestMargin);
+//           System.out.println("Pārbaudāmā vērtība: " + testInteger + " zem indeksa " + testIndex + ". Veicu otro if'u - grīda: " + lowestMargin);
             doBinarySearch(list, findNumber, lowestMargin, highestMargin);
         } else if (testInteger == findNumber) {
             System.out.println("Atradu ciparu zem indeksa: " + testIndex);
         }
+
     }
 }
