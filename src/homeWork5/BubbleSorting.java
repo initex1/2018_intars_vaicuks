@@ -9,7 +9,7 @@ public class BubbleSorting {
         printList(list);
 
         sortList(list);
-
+        System.out.println();
         System.out.println("pēc pārtošanas");
         printList(list);
     }
@@ -29,7 +29,6 @@ public class BubbleSorting {
                     int tmpValue = list[i];
                     list[i] = list[i + 1];
                     list[i + 1] = tmpValue;
-
                 }
             }
         }
@@ -48,7 +47,7 @@ public class BubbleSorting {
 
     private static void printList(int[] list) {
         for (int i = 0; i < list.length; i++) {
-            System.out.println(list[i]);
+            System.out.print(list[i]+", ");
         }
     }
 

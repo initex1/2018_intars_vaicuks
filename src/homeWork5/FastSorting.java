@@ -53,7 +53,7 @@ public class FastSorting {
         return list;
     }
 
-    private static int[] createAndFillList() {
+    public static int[] createAndFillList() {
         int[] list = new int[10];
         Random random = new Random();
 
@@ -63,7 +63,7 @@ public class FastSorting {
         return list;
     }
 
-    private static void printList(int[] list) {
+    public static void printList(int[] list) {
         for (int i = 0; i < list.length; i++) {
             System.out.print(list[i] + ", ");
         }
