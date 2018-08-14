@@ -147,7 +147,7 @@ public class ArrayUtils {
     }
 
     public static void doBinarySearch(int[] list, int findNumber, int lowestMargin, int highestMargin) {
-        if (lowestMargin != highestMargin) {
+        if (highestMargin - lowestMargin >= 0) {
             int testIndex = (highestMargin + lowestMargin) / 2;
             int testInteger = list[testIndex];
             if (testInteger > findNumber) {
