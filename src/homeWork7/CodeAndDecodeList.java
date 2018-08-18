@@ -1,8 +1,13 @@
+
 package homeWork7;
 
 import java.util.Scanner;
 
 public class CodeAndDecodeList {
+
+    /*
+    Pupiņ-valodas teksta šifrēšana un atšifrēšana
+     */
 
 
     public static void main(String[] args) {
@@ -10,15 +15,17 @@ public class CodeAndDecodeList {
         int codeOrDecode = -1;
         System.out.println("Izvēlies kodēšanas vai dekodēšanas režīmu (0 vai 1)");
         codeOrDecode = modeSelect(codeOrDecode);
+        doJob(codeOrDecode, keySymbol);
+
+    }
+
+    private static void doJob(int codeOrDecode, char keySymbol) {
         switch (codeOrDecode) {
             case 0:
                 String inputText = "";
                 System.out.println("Iedod ziņu šifrēšanai...");
                 inputText = getMessageInput(inputText);
-                //System.out.println("Nešifrētā ziņa: " + inputText);
                 char[] listToCode = splitToCharList(inputText);
-                // printCharList(listToCode);
-                //codeMessage(listToCode, keySymbol);
                 String codedMessage = codeMessage(listToCode, keySymbol);
                 System.out.println("Šifrētā ziņa: " + codedMessage);
                 break;
