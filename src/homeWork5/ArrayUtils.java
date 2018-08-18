@@ -39,8 +39,12 @@ public class ArrayUtils {
         System.out.println("Smallest number = " + smallestInteger);
 
         int searchNumber = getUserInput();
-        doBinarySearch(array, searchNumber, 0, array.length - 1);
-
+        int foundItIndex = doBinarySearch(array, searchNumber, 0, array.length - 1);
+        if (foundItIndex >= 0) {
+            System.out.println("Atradu ciparu zem indeksa " + foundItIndex);
+        } else {
+            System.out.println("Tāda cipara listē nemaz nav!!!");
+        }
     }
 
 
@@ -146,21 +150,23 @@ public class ArrayUtils {
         return searchNumber;
     }
 
-    public static void doBinarySearch(int[] list, int findNumber, int lowestMargin, int highestMargin) {
+    public static int doBinarySearch(int[] list, int findNumber, int lowestMargin, int highestMargin) {
         if (highestMargin - lowestMargin >= 0) {
             int testIndex = (highestMargin + lowestMargin) / 2;
             int testInteger = list[testIndex];
+
             if (testInteger > findNumber) {
                 highestMargin = testIndex - 1;
-                doBinarySearch(list, findNumber, lowestMargin, highestMargin);
+                return doBinarySearch(list, findNumber, lowestMargin, highestMargin);
+
             } else if (testInteger < findNumber) {
                 lowestMargin = testIndex + 1;
-                doBinarySearch(list, findNumber, lowestMargin, highestMargin);
+                return doBinarySearch(list, findNumber, lowestMargin, highestMargin);
+
             } else if (testInteger == findNumber) {
-                System.out.println("Atradu ciparu zem indeksa: " + testIndex);
+                return testIndex;
             }
-        } else {
-            System.out.println("Nav tāda cipara!");
         }
+        return -1;
     }
 }
