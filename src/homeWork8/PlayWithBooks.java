@@ -1,4 +1,4 @@
-package homework8;
+package homeWork8;
 
 public class PlayWithBooks {
     public static void main(String[] args) {
