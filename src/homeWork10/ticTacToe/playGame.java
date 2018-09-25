@@ -82,14 +82,15 @@ public class playGame {
         int humanInput;
         System.out.println("=================================");
         humanInput = scanner.nextInt();
-        if (game.getLayout().gamelLayout[humanInput - 1] == '\u0000') {
+
+        if (humanInput>=1&&humanInput<=9&&game.getLayout().gamelLayout[humanInput - 1] == '\u0000') {
             game.getLayout().gamelLayout[humanInput - 1] = player.getPlayerChar();
             game.getLayout().printLayout();
             System.out.println("Nice move,  " + player.getName() + "!");
             System.out.println("****************************");
             System.out.println();
         } else {
-            System.out.println("Invalid selection - already used field. Try again!");
+            System.out.println("Invalid selection - already used field or wrong number. Try again!");
             getHumanInput(game, scanner, player);
         }
 
