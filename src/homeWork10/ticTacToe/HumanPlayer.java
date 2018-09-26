@@ -3,8 +3,8 @@ package homeWork10.ticTacToe;
 public class HumanPlayer extends Player {
 
 
-    public String name;
-    public char playerChar;
+    private String name;
+    private char playerChar;
 
 
 
