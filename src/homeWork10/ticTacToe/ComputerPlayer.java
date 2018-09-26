@@ -2,8 +2,8 @@ package homeWork10.ticTacToe;
 
 public class ComputerPlayer extends Player {
 
-    public String name;
-    public  char computerChar;
+    private String name;
+    private   char computerChar;
 
     public ComputerPlayer(String name) {
         this.name = name;
