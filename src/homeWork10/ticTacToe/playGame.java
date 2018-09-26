@@ -1,5 +1,8 @@
 package homeWork10.ticTacToe;
 
+import java.util.ArrayList;
+import java.util.List;
+import java.util.Random;
 import java.util.Scanner;
 
 public class playGame {
@@ -24,8 +27,75 @@ public class playGame {
             case MODE2:
                 ComputerPlayer computerPlayer = new ComputerPlayer("Computer");
                 //do game MODE2 here;
+                System.out.println("Ho-hoo! I will crush you! ");
+                playGameMode2(scanner, game, player1, computerPlayer);
                 break;
         }
+    }
+
+    private static void playGameMode2(Scanner scanner, Game game, HumanPlayer player1, ComputerPlayer computerPlayer) {
+        Player currentPlayer = player1;
+        System.out.println(currentPlayer.getName() + " - your move! Make your selection by pressing buttons from 1-9!");
+        game.getLayout().printLayout();
+        boolean isWinner = false;
+        do {
+            if (isMovesLeft(game)) {
+                if (currentPlayer.getName() != "Computer") {
+                    getHumanInput(game, scanner, currentPlayer);
+                } else {
+                    getComputerInput(game, computerPlayer);
+                }
+                isWinner = checkForWinner(game);
+                if (!isMovesLeft(game)) {
+                    if (isWinner == true) {
+                        System.out.println(currentPlayer.getName() + " is WINNER");
+                        break;
+                    } else {
+                        System.out.println("Doh - out of moves!");
+                        break;
+                    }
+                }
+                if (isWinner == true) {
+                    System.out.println(currentPlayer.getName() + " is WINNER");
+                    break;
+                }
+                currentPlayer = changeCurrentPlayer(game, player1, computerPlayer, currentPlayer);
+
+            }
+        } while (!isWinner);
+    }
+
+    private static void getComputerInput(Game game, Player player) {
+        System.out.println("****************************");
+        List<Integer> availableList =  new ArrayList();
+        for (int i=0;i<game.getLayout().gameLayout.length;i++){
+         if(game.getLayout().gameLayout[i]=='\u0000'){
+             availableList.add(i);
+         }
+     }
+        Random random=new Random();
+        int moveIndex=random.nextInt(availableList.size()-1);
+        int moveValue=availableList.get(moveIndex);
+
+        game.getLayout().gameLayout[moveValue] = player.getPlayerChar();
+        game.getLayout().printLayout();
+        System.out.println("I'm genious!");
+        System.out.println("****************************");
+        System.out.println();
+
+    }
+
+    private static Player changeCurrentPlayer(Game game, HumanPlayer player1, ComputerPlayer computerPlayer, Player currentPlayer) {
+        if (currentPlayer == player1) {
+            currentPlayer = computerPlayer;
+            System.out.println("OK. Now it's my turn!");
+            game.getLayout().printLayout();
+        } else {
+            currentPlayer = player1;
+            System.out.println("OK. Now it's " + currentPlayer.getName() + " turn!");
+            game.getLayout().printLayout();
+        }
+        return currentPlayer;
     }
 
     private static void playGameMode1(Game game, HumanPlayer player1, HumanPlayer player2, Scanner scanner) {
@@ -70,7 +140,7 @@ public class playGame {
     }
 
     private static boolean isMovesLeft(Game game) {
-        for (char c : game.getLayout().gamelLayout) {
+        for (char c : game.getLayout().gameLayout) {
             if (c == '\u0000') {
                 return true;
             }
@@ -82,8 +152,8 @@ public class playGame {
         int humanInput;
         System.out.println("=================================");
         humanInput = getValidHumanInputType(scanner);
-        if (humanInput >= 1 && humanInput <= 9 && game.getLayout().gamelLayout[humanInput - 1] == '\u0000') {
-            game.getLayout().gamelLayout[humanInput - 1] = player.getPlayerChar();
+        if (humanInput >= 1 && humanInput <= 9 && game.getLayout().gameLayout[humanInput - 1] == '\u0000') {
+            game.getLayout().gameLayout[humanInput - 1] = player.getPlayerChar();
             game.getLayout().printLayout();
             System.out.println("Nice move,  " + player.getName() + "!");
             System.out.println("****************************");
@@ -107,21 +177,21 @@ public class playGame {
 
     private static boolean checkForWinner(Game game) {
         //Sorry for this
-        if (game.getLayout().gamelLayout[0] != '\u0000' && game.getLayout().gamelLayout[0] == game.getLayout().gamelLayout[1] && game.getLayout().gamelLayout[0] == game.getLayout().gamelLayout[2]) {
+        if (game.getLayout().gameLayout[0] != '\u0000' && game.getLayout().gameLayout[0] == game.getLayout().gameLayout[1] && game.getLayout().gameLayout[0] == game.getLayout().gameLayout[2]) {
             return true;
-        } else if (game.getLayout().gamelLayout[3] != '\u0000' && game.getLayout().gamelLayout[3] == game.getLayout().gamelLayout[4] && game.getLayout().gamelLayout[3] == game.getLayout().gamelLayout[5]) {
+        } else if (game.getLayout().gameLayout[3] != '\u0000' && game.getLayout().gameLayout[3] == game.getLayout().gameLayout[4] && game.getLayout().gameLayout[3] == game.getLayout().gameLayout[5]) {
             return true;
-        } else if (game.getLayout().gamelLayout[6] != '\u0000' && game.getLayout().gamelLayout[6] == game.getLayout().gamelLayout[7] && game.getLayout().gamelLayout[6] == game.getLayout().gamelLayout[8]) {
+        } else if (game.getLayout().gameLayout[6] != '\u0000' && game.getLayout().gameLayout[6] == game.getLayout().gameLayout[7] && game.getLayout().gameLayout[6] == game.getLayout().gameLayout[8]) {
             return true;
-        } else if (game.getLayout().gamelLayout[0] != '\u0000' && game.getLayout().gamelLayout[0] == game.getLayout().gamelLayout[3] && game.getLayout().gamelLayout[0] == game.getLayout().gamelLayout[6]) {
+        } else if (game.getLayout().gameLayout[0] != '\u0000' && game.getLayout().gameLayout[0] == game.getLayout().gameLayout[3] && game.getLayout().gameLayout[0] == game.getLayout().gameLayout[6]) {
             return true;
-        } else if (game.getLayout().gamelLayout[1] != '\u0000' && game.getLayout().gamelLayout[1] == game.getLayout().gamelLayout[4] && game.getLayout().gamelLayout[1] == game.getLayout().gamelLayout[7]) {
+        } else if (game.getLayout().gameLayout[1] != '\u0000' && game.getLayout().gameLayout[1] == game.getLayout().gameLayout[4] && game.getLayout().gameLayout[1] == game.getLayout().gameLayout[7]) {
             return true;
-        } else if (game.getLayout().gamelLayout[2] != '\u0000' && game.getLayout().gamelLayout[2] == game.getLayout().gamelLayout[5] && game.getLayout().gamelLayout[2] == game.getLayout().gamelLayout[8]) {
+        } else if (game.getLayout().gameLayout[2] != '\u0000' && game.getLayout().gameLayout[2] == game.getLayout().gameLayout[5] && game.getLayout().gameLayout[2] == game.getLayout().gameLayout[8]) {
             return true;
-        } else if (game.getLayout().gamelLayout[0] != '\u0000' && game.getLayout().gamelLayout[0] == game.getLayout().gamelLayout[4] && game.getLayout().gamelLayout[0] == game.getLayout().gamelLayout[8]) {
+        } else if (game.getLayout().gameLayout[0] != '\u0000' && game.getLayout().gameLayout[0] == game.getLayout().gameLayout[4] && game.getLayout().gameLayout[0] == game.getLayout().gameLayout[8]) {
             return true;
-        } else if (game.getLayout().gamelLayout[2] != '\u0000' && game.getLayout().gamelLayout[2] == game.getLayout().gamelLayout[4] && game.getLayout().gamelLayout[2] == game.getLayout().gamelLayout[6]) {
+        } else if (game.getLayout().gameLayout[2] != '\u0000' && game.getLayout().gameLayout[2] == game.getLayout().gameLayout[4] && game.getLayout().gameLayout[2] == game.getLayout().gameLayout[6]) {
             return true;
         }
         return false;
