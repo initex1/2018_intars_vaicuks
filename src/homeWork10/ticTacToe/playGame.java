@@ -81,9 +81,8 @@ public class playGame {
     private static void getHumanInput(Game game, Scanner scanner, Player player) {
         int humanInput;
         System.out.println("=================================");
-        humanInput = scanner.nextInt();
-
-        if (humanInput>=1&&humanInput<=9&&game.getLayout().gamelLayout[humanInput - 1] == '\u0000') {
+        humanInput = getValidHumanInputType(scanner);
+        if (humanInput >= 1 && humanInput <= 9 && game.getLayout().gamelLayout[humanInput - 1] == '\u0000') {
             game.getLayout().gamelLayout[humanInput - 1] = player.getPlayerChar();
             game.getLayout().printLayout();
             System.out.println("Nice move,  " + player.getName() + "!");
@@ -94,6 +93,16 @@ public class playGame {
             getHumanInput(game, scanner, player);
         }
 
+    }
+
+    private static int getValidHumanInputType(Scanner scanner) {
+        int humanInput;
+        while (!scanner.hasNextInt()) {
+            System.out.println("That's not a number!");
+            scanner.next();
+        }
+        humanInput = scanner.nextInt();
+        return humanInput;
     }
 
     private static boolean checkForWinner(Game game) {
