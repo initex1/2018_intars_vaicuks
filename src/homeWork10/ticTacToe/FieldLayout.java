@@ -3,7 +3,7 @@ package homeWork10.ticTacToe;
 public class FieldLayout {
 
 
-    char []gamelLayout={'\u0000','\u0000','\u0000','\u0000','\u0000','\u0000','\u0000','\u0000','\u0000'};
+    char [] gameLayout ={'\u0000','\u0000','\u0000','\u0000','\u0000','\u0000','\u0000','\u0000','\u0000'};
    // int [] availibleNumbers={1,2,3,4,5,6,7,8,9};
 
 
@@ -11,11 +11,11 @@ public class FieldLayout {
     }
 
     public void printLayout(){
-        System.out.println("\t"+gamelLayout[0]+"\t"+"|"+"\t"+gamelLayout[1]+"\t"+"|"+"\t"+gamelLayout[2]);
+        System.out.println("\t"+ gameLayout[0]+"\t"+"|"+"\t"+ gameLayout[1]+"\t"+"|"+"\t"+ gameLayout[2]);
         System.out.println("\t-----------------");
-        System.out.println("\t"+gamelLayout[3]+"\t"+"|"+"\t"+gamelLayout[4]+"\t"+"|"+"\t"+gamelLayout[5]);
+        System.out.println("\t"+ gameLayout[3]+"\t"+"|"+"\t"+ gameLayout[4]+"\t"+"|"+"\t"+ gameLayout[5]);
         System.out.println("\t-----------------");
-        System.out.println("\t"+gamelLayout[6]+"\t"+"|"+"\t"+gamelLayout[7]+"\t"+"|"+"\t"+gamelLayout[8]);
+        System.out.println("\t"+ gameLayout[6]+"\t"+"|"+"\t"+ gameLayout[7]+"\t"+"|"+"\t"+ gameLayout[8]);
 
 
     }
