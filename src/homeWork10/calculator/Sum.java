@@ -10,6 +10,10 @@ public class Sum implements Calculable {
         this.b=b;
     }
 
+    public Sum(){
+
+    }
+
     @Override
     public double execute() {
         return a+b;
