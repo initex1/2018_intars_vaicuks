@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class GuessNumber {
     public static void main(String[] args) {
-        Random random = new Random();
+        Random random = new Random(); //avoid one-time local variables
         int computerNumber = random.nextInt(101);
         Scanner scanner = new Scanner(System.in);
         System.out.print("Ievadi  ciparu: ");

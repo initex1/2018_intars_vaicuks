@@ -16,8 +16,9 @@ public class CountInterval {
     private static void printInterval(int numberA, int numberB) {
         if (numberA < numberB) {
             while (numberA <= numberB) {
-                System.out.println(numberA);
-                numberA++;
+                System.out.println(numberA++); //better
+//                System.out.println(numberA);
+//                numberA++;
             }
         }
     }
