@@ -2,7 +2,7 @@ package homeWork3;
 
 import java.util.Scanner;
 
-
+//OK
 public class TwoNumberInterval {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

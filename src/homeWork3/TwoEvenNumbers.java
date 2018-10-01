@@ -2,7 +2,7 @@ package homeWork3;
 
 import java.util.Scanner;
 
-
+//Ok
 public class TwoEvenNumbers {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);

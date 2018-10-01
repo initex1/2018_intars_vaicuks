@@ -15,11 +15,12 @@ public class CountNumbers {
 
     }
 
+    //Bad naming for method
     private static void resultMethodA(int numberA, int numberB) {
         int result = 0;
         if (numberA < numberB) {
             for (int a = numberA; a <= numberB; a++) {
-                result = result + a;
+                result = result + a;  //it's better to simler form result += a
             }
             System.out.println("Visu skaitļu summa ar pirmo metodi: " + result);
         }
