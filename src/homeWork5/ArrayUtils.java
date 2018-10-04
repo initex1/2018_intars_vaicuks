@@ -1,9 +1,9 @@
 package homeWork5;
 
-import java.sql.SQLOutput;
 import java.util.Random;
 import java.util.Scanner;
 
+//avoid one-time used local variables
 public class ArrayUtils {
 
     // konstantes definešana - masīva lielums
@@ -73,7 +73,7 @@ public class ArrayUtils {
         int arraySum = 0;
         for (int i = 0; i < array.length; i++) {
             int arrayElement = array[i];
-            arraySum = arraySum + arrayElement;
+            arraySum = arraySum + arrayElement; //arraySum += array[i]  - less code
         }
         return arraySum;
     }
@@ -84,15 +84,15 @@ public class ArrayUtils {
         int evenNumbersCount = 0;
         for (int i = 0; i < array.length; i++) {
             int arrayElement = array[i];
-            if (arrayElement % 2 == 0) {
-                evenNumbersCount += 1;
+            if (arrayElement % 2 == 0) {  //I suggest to move it to separate method "isEvenNumber" - would be easier to understand
+                evenNumbersCount += 1; //evenNumbersCount++
             }
         }
         return evenNumbersCount;
     }
 
     private static int countOddNumbersInArray(int[] array) {
-
+//same comments as in previous method
         int oddNumbersCount = 0;
         for (int i = 0; i < array.length; i++) {
             int arrayElement = array[i];
@@ -114,7 +114,7 @@ public class ArrayUtils {
     private static void sortingStep(int[] list) {
         for (int i = 0; i < list.length; i++) {
             if (i != list.length - 1) {
-                if (list[i] > list[i + 1]) {
+                if (list[i] > list[i + 1]) {  // use "&&" to avoid inner "if"
                     int tmpValue = list[i];
                     list[i] = list[i + 1];
                     list[i + 1] = tmpValue;
@@ -134,7 +134,7 @@ public class ArrayUtils {
     }
 
     private static int findSmallestInteger(int[] list) {
-        int smallestInt = findBiggestInteger(list);
+        int smallestInt = findBiggestInteger(list); // use instead Integer.MAX_VALUE
         for (int i = 0; i < list.length; i++) {
             if (smallestInt > list[i]) {
                 smallestInt = list[i];
@@ -152,6 +152,8 @@ public class ArrayUtils {
 
     public static int doBinarySearch(int[] list, int findNumber, int lowestMargin, int highestMargin) {
         if (highestMargin - lowestMargin >= 0) {
+
+            //bad naming
             int testIndex = (highestMargin + lowestMargin) / 2;
             int testInteger = list[testIndex];
 

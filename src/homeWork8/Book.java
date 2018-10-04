@@ -1,6 +1,8 @@
 package homeWork8;
 
 public class Book {
+
+    //all should be private - encapsulation
     String author;
     int year;
     String title;

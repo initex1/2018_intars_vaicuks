@@ -26,9 +26,10 @@ public class FastSorting {
                 secondPointer--;
             }
             if (firstPointer <= secondPointer) {
-                swap(list, firstPointer, secondPointer);
-                firstPointer++;
-                secondPointer--;
+//                swap(list, firstPointer, secondPointer);
+                swap(list, firstPointer++, secondPointer++);
+//                firstPointer++;    //no need for this line
+//                secondPointer--;   //no need for this line
             }
         }
         return firstPointer;
@@ -36,7 +37,10 @@ public class FastSorting {
 
 
     public static void quickSort(int[] list, int firstPointer, int secondPointer) {
+
         if (firstPointer >= secondPointer) {
+            //return in a void method is a bad style
+            //just replace if condition
             return;
         }
         int pivot = list[(firstPointer + secondPointer) / 2];
@@ -53,12 +57,13 @@ public class FastSorting {
         return list;
     }
 
+    // use constants over "magic numbers"
     public static int[] createAndFillList() {
-        int[] list = new int[10];
+        int[] list = new int[10]; //magic number
         Random random = new Random();
 
         for (int i = 0; i < list.length; i++) {
-            list[i] = random.nextInt(100);
+            list[i] = random.nextInt(100);//magic number
         }
         return list;
     }

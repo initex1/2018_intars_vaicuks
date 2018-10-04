@@ -12,8 +12,9 @@ public class ConvertToListAndSum {
 
     private static int getSumOfList(int[] list) {
         int sum=0;
+        //use foreach
         for (int i=0;i<list.length;i++){
-            sum=sum+list[i];
+            sum=sum+list[i]; //sum += list[i]
         }
         return sum;
     }
@@ -30,7 +31,7 @@ public class ConvertToListAndSum {
 
     private static String getString() {
         Scanner scanner = new Scanner(System.in);
-        String list = scanner.nextLine();
+        String list = scanner.nextLine(); //useless local variable
         return list;
     }
 }
